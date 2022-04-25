@@ -2,14 +2,6 @@ package com.plugin.makefiles;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.Messages;
-import com.intellij.psi.PsiDirectory;
-import com.intellij.psi.PsiFile;
-import com.intellij.psi.util.PsiUtilBase;
-import com.intellij.util.PairFunction;
 import com.plugin.makefiles.data.MvpPluginData;
 import com.plugin.makefiles.factory.MvpManifestFactory;
 import com.plugin.makefiles.factory.MvpPluginClassFactory;
@@ -17,16 +9,13 @@ import com.plugin.makefiles.factory.MvpXmlFactory;
 import com.plugin.makefiles.utils.MvpPluginUtils;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * 自动生成文件
  */
 public class MakeFilesAction extends AnAction {
     long time;
+
     @Override
     public void actionPerformed(AnActionEvent e) {
         time = System.currentTimeMillis();
@@ -98,7 +87,7 @@ public class MakeFilesAction extends AnAction {
                             @Override
                             public void run() {
                                 MvpShowSuccessDialog mvpShowSuccessDialog = new MvpShowSuccessDialog();
-                                mvpShowSuccessDialog.setLabel("生成插件消耗时间" + (System.currentTimeMillis() - time)/ 1000 + "s");
+                                mvpShowSuccessDialog.setLabel("生成插件消耗时间" + (System.currentTimeMillis() - time) / 1000 + "s");
                                 mvpShowSuccessDialog.setVisible(true);
                             }
                         });
