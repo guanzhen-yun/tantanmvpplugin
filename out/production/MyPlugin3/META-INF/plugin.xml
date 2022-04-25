@@ -1,0 +1,36 @@
+<idea-plugin>
+  <id>com.tantan.plugin.makefiles</id>
+  <name>MakeFiles</name>
+  <version>1.0</version>
+  <vendor email="guanzhen8683@tantanapp.com" url="http://www.tantan.com">探探</vendor>
+
+  <description><![CDATA[
+      Can make many files automatics, use t very easy.<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      no change
+    ]]>
+  </change-notes>
+
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="MakeFiles.MakeFilesAction" class="com.plugin.makefiles.MakeFilesAction" text="MakeFiles"
+            description="make files automatics">
+      <add-to-group group-id="CodeMenu" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="meta U"/>
+    </action>
+  </actions>
+
+</idea-plugin>
